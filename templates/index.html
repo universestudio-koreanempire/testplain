@@ -18,7 +18,7 @@
 </head>
 <body>
   <div class="top">
-    <img src="/static/flower-letter.jpg">
+    <img src="{{ url_for('static', filename='top-banner.jpeg') }}">
   </div>
 
   <div class="bottom">
@@ -26,8 +26,8 @@
 
       <div class="card">
         <h2>2등</h2>
-        {% if second.photo %}
-        <img class="profile-img" src="/static/{{ second.photo }}">
+        {% if second.has_photo %}
+        <img class="profile-img" src="{{ url_for('photo', status=2) }}">
         {% endif %}
         <div><b>{{ second.name }}</b></div>
         <div class="field">소속: {{ second.affiliation }}</div>
@@ -37,8 +37,8 @@
 
       <div class="card first">
         <h2>1등</h2>
-        {% if first.photo %}
-        <img class="profile-img" src="/static/{{ first.photo }}">
+        {% if first.has_photo %}
+        <img class="profile-img" src="{{ url_for('photo', status=1) }}">
         {% endif %}
         <div><b>{{ first.name }}</b></div>
         <div class="field">소속: {{ first.affiliation }}</div>
@@ -48,8 +48,8 @@
 
       <div class="card">
         <h2>3등</h2>
-        {% if third.photo %}
-        <img class="profile-img" src="/static/{{ third.photo }}">
+        {% if third.has_photo %}
+        <img class="profile-img" src="{{ url_for('photo', status=3) }}">
         {% endif %}
         <div><b>{{ third.name }}</b></div>
         <div class="field">소속: {{ third.affiliation }}</div>
