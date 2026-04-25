@@ -150,6 +150,11 @@ def index():
     )
 
 
+@app.route('/list')
+def judge_list():
+    return render_template('list.html')
+
+
 @app.route('/photo/<int:status>')
 def photo(status):
     if status not in (1, 2, 3):
